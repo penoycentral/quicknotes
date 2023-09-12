@@ -14,3 +14,10 @@ journalctl -b 0
 chcon -t httpd_system_content_t /var/www/html/index.html
 chcon --reference /var/www/html/ /var/www/html/index.html
 ```
+
+```
+semanage fcontex -a -e /var/www/html /foo
+a - add
+e - existing
+restorecon -vR /foo
+```
